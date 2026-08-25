@@ -609,7 +609,7 @@ maxLength="50"
 
  <button
   type="button"
-  className="delete-btn"
+  className="delete-btnm"
   onClick={() => handleDelete(student._id)}
 >
   Delete
