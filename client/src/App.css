@@ -721,7 +721,7 @@
   opacity: 1;
 
   background-color: #dc3545;
-  color: white;
+  color: rgb(231, 46, 46);
 
   border: none;
   padding: 8px 14px;
@@ -754,8 +754,7 @@
     z-index: 10;
     padding: 8px 12px;
     font-size: 14px;
-    background-color: #bb2d3b;
-}
+    
   }
 }
 
