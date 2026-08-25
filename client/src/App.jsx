@@ -607,21 +607,13 @@ maxLength="50"
     Edit
   </button>
 
-  <button
-    type="button"
-    onClick={() => handleDelete(student._id)}
-    style={{
-      backgroundColor: "red",
-      color: "white",
-      border: "none",
-      padding: "8px 12px",
-      marginLeft: "8px",
-      borderRadius: "5px",
-      cursor: "pointer"
-    }}
-  >
-    Delete
-  </button>
+ <button
+  type="button"
+  className="delete-btn"
+  onClick={() => handleDelete(student._id)}
+>
+  Delete
+</button>
 </td>
     </tr>
   ))}
