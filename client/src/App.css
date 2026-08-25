@@ -716,14 +716,45 @@
   }
 }
 .delete-btn {
+  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+
   background-color: #dc3545;
   color: white;
+
   border: none;
   padding: 8px 14px;
   margin-left: 8px;
+
   border-radius: 6px;
   cursor: pointer;
+
   font-size: 14px;
+  font-weight: 500;
+
+  position: relative;
+  z-index: 10;
+
+  white-space: nowrap;
+}
+
+/* Hover effect */
+.delete-btn:hover {
+  background-color: #bb2d3b;
+}
+
+/* Mobile/Desktop-site compatibility */
+@media screen and (max-width: 768px) {
+  .delete-btn {
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    z-index: 10;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
 }
 
 .delete-btn:hover {
