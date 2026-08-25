@@ -32,7 +32,7 @@ const [departmentFilter, setDepartmentFilter] = useState("");
     return;
   }
 
-  fetch("http://localhost:5000/api/students", {
+  fetch("https://student-management-api-7rcr.onrender.com/api/students", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -172,7 +172,7 @@ if (formData.department.trim() === "") {
       if (editingId) {
         // UPDATE student
        response = await fetch(
-  `http://localhost:5000/api/students/${editingId}`,
+ `https://student-management-api-7rcr.onrender.com/api/students/${editingId}`,
   {
     method: "PUT",
     headers: {
@@ -185,7 +185,7 @@ if (formData.department.trim() === "") {
       } else {
         // ADD student
        response = await fetch(
-  "http://localhost:5000/api/students",
+ "https://student-management-api-7rcr.onrender.com/api/students",
   {
     method: "POST",
     headers: {
@@ -278,7 +278,7 @@ if (formData.department.trim() === "") {
 
     try {
      const response = await fetch(
-  `http://localhost:5000/api/students/${id}`,
+  `https://student-management-api-7rcr.onrender.com/api/students/${id}`,
   {
     method: "DELETE",
     headers: {
