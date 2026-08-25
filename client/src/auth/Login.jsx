@@ -21,7 +21,7 @@ function Login({ onLogin, onRegister }) {
     setError("");
 
     try {
-      const response = await fetch("https://student-management-system-tez0.onrender.com/api/auth/login", {
+     const response = await fetch("https://student-management-api-7rcr.onrender.com/api/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

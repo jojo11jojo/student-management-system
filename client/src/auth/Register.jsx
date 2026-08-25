@@ -25,7 +25,7 @@ function Register({ onLogin }) {
 
     try {
       const response = await fetch(
-  "https://student-management-system-tez0.onrender.com/api/auth/register",
+  "https://student-management-api-7rcr.onrender.com/api/auth/register",
   {
     method: "POST",
     headers: {
