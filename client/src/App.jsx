@@ -609,8 +609,36 @@ maxLength="50"
 
  <button
   type="button"
-  className="delete-btnm"
   onClick={() => handleDelete(student._id)}
+  style={{
+    display: "inline-block",
+    visibility: "visible",
+    opacity: 1,
+
+    backgroundColor: "#dc3545",
+    color: "#ffffff",
+
+    border: "2px solid #dc3545",
+    padding: "8px 14px",
+    marginLeft: "8px",
+
+    borderRadius: "6px",
+    cursor: "pointer",
+
+    fontSize: "14px",
+    fontWeight: "600",
+
+    position: "relative",
+    zIndex: 9999,
+
+    width: "auto",
+    height: "auto",
+
+    overflow: "visible",
+    whiteSpace: "nowrap",
+
+    textAlign: "center"
+  }}
 >
   Delete
 </button>
