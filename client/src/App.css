@@ -715,7 +715,20 @@
     transform: translateY(0);
   }
 }
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  margin-left: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
 
+.delete-btn:hover {
+  background-color: #b02a37;
+}
 /* =========================================================
    RESPONSIVE DESIGN
    ========================================================= */

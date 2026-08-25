@@ -600,18 +600,21 @@ maxLength="50"
       <td>{student.department}</td>
 
       <td>
-        <button
-          onClick={() => handleEdit(student)}
-        >
-          Edit
-        </button>
+  <button
+    type="button"
+    onClick={() => handleEdit(student)}
+  >
+    Edit
+  </button>
 
-        <button
-          onClick={() => handleDelete(student._id)}
-        >
-          Delete
-        </button>
-      </td>
+  <button
+    type="button"
+    className="delete-btn"
+    onClick={() => handleDelete(student._id)}
+  >
+    Delete
+  </button>
+</td>
     </tr>
   ))}
 </tbody>
