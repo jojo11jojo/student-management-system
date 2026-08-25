@@ -514,139 +514,163 @@ maxLength="50"
         )}
       </div>
 
-      {/* Student List */}
-<h2>Student List</h2>
- <p className="result-count">
-  Showing {filteredStudents.length} of {students.length} students
-</p>
-<div className="filter-container">
+           {/* Student List */}
+      <h2>Student List</h2>
 
-  <input
-    type="text"
-    placeholder="Search by name or email..."
-    value={searchTerm}
-    onChange={(event) => setSearchTerm(event.target.value)}
-  />
+      <p className="result-count">
+        Showing {filteredStudents.length} of {students.length} students
+      </p>
 
-  <select
-    value={courseFilter}
-    onChange={(event) => setCourseFilter(event.target.value)}
-  >
-    <option value="">All Courses</option>
+      <div className="filter-container">
 
-    {courses.map((course) => (
-      <option key={course} value={course}>
-        {course}
-      </option>
-    ))}
-  </select>
+        <input
+          type="text"
+          placeholder="Search by name or email..."
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+        />
 
-  <select
-    value={departmentFilter}
-    onChange={(event) =>
-      setDepartmentFilter(event.target.value)
-    }
-  >
-    <option value="">All Departments</option>
+        <select
+          value={courseFilter}
+          onChange={(event) => setCourseFilter(event.target.value)}
+        >
+          <option value="">All Courses</option>
 
-    {departments.map((department) => (
-      <option key={department} value={department}>
-        {department}
-      </option>
-    ))}
-  </select>
+          {courses.map((course) => (
+            <option key={course} value={course}>
+              {course}
+            </option>
+          ))}
+        </select>
 
-  {/* Clear Filters Button */}
-  <button
-    type="button"
-    className="clear-filter"
-    onClick={() => {
-      setSearchTerm("");
-      setCourseFilter("");
-      setDepartmentFilter("");
-    }}
-  >
-    Clear Filters
-  </button>
- 
+        <select
+          value={departmentFilter}
+          onChange={(event) =>
+            setDepartmentFilter(event.target.value)
+          }
+        >
+          <option value="">All Departments</option>
 
-</div>
-{loading && <p>Loading students...</p>}
+          {departments.map((department) => (
+            <option key={department} value={department}>
+              {department}
+            </option>
+          ))}
+        </select>
 
-{!loading && filteredStudents.length === 0 && (
-  <p>No students found.</p>
-)}
+        {/* Clear Filters Button */}
+        <button
+          type="button"
+          className="clear-filter"
+          onClick={() => {
+            setSearchTerm("");
+            setCourseFilter("");
+            setDepartmentFilter("");
+          }}
+        >
+          Clear Filters
+        </button>
 
-{!loading && filteredStudents.length > 0 && (
-  <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Course</th>
-              <th>Department</th>
-              <th>Action</th>
-            </tr>
-          </thead>
+      </div>
 
-          <tbody>
-  {filteredStudents.map((student) => (
-    <tr key={student._id}>
-      <td>{student.name}</td>
-      <td>{student.email}</td>
-      <td>{student.phone}</td>
-      <td>{student.course}</td>
-      <td>{student.department}</td>
+      {loading && <p>Loading students...</p>}
 
-      <td>
-  <button
-    type="button"
-    onClick={() => handleEdit(student)}
-  >
-    Edit
-  </button>
+      {!loading && filteredStudents.length === 0 && (
+        <p>No students found.</p>
+      )}
 
- <button
-  type="button"
-  onClick={() => handleDelete(student._id)}
-  style={{
-    display: "inline-block",
-    visibility: "visible",
-    opacity: 1,
+      {!loading && filteredStudents.length > 0 && (
+        <div
+          style={{
+            width: "100%",
+            overflowX: "auto",
+            overflowY: "visible",
+            WebkitOverflowScrolling: "touch"
+          }}
+        >
+          <table
+            style={{
+              minWidth: "900px",
+              width: "100%"
+            }}
+          >
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Course</th>
+                <th>Department</th>
+                <th>Action</th>
+              </tr>
+            </thead>
 
-    backgroundColor: "#dc3545",
-    color: "#ffffff",
+            <tbody>
+              {filteredStudents.map((student) => (
+                <tr key={student._id}>
 
-    border: "2px solid #dc3545",
-    padding: "8px 14px",
-    marginLeft: "8px",
+                  <td>{student.name}</td>
 
-    borderRadius: "6px",
-    cursor: "pointer",
+                  <td>{student.email}</td>
 
-    fontSize: "14px",
-    fontWeight: "600",
+                  <td>{student.phone}</td>
 
-    position: "relative",
-    zIndex: 9999,
+                  <td>{student.course}</td>
 
-    width: "auto",
-    height: "auto",
+                  <td>{student.department}</td>
 
-    overflow: "visible",
-    whiteSpace: "nowrap",
+                  <td
+                    style={{
+                      whiteSpace: "nowrap",
+                      minWidth: "160px",
+                      overflow: "visible"
+                    }}
+                  >
 
-    textAlign: "center"
-  }}
->
-  Delete
-</button>
-</td>
-    </tr>
-  ))}
-</tbody>
-        </table>
+                    {/* Edit Button */}
+                    <button
+                      type="button"
+                      onClick={() => handleEdit(student)}
+                    >
+                      Edit
+                    </button>
+
+                    {/* Delete Button */}
+                    <button
+                      type="button"
+                      onClick={() => handleDelete(student._id)}
+                      style={{
+                        display: "inline-block",
+                        visibility: "visible",
+                        opacity: 1,
+                        backgroundColor: "#dc3545",
+                        color: "#ffffff",
+                        border: "2px solid #dc3545",
+                        padding: "8px 14px",
+                        marginLeft: "8px",
+                        borderRadius: "6px",
+                        cursor: "pointer",
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        position: "relative",
+                        zIndex: 9999,
+                        width: "auto",
+                        height: "auto",
+                        overflow: "visible",
+                        whiteSpace: "nowrap",
+                        textAlign: "center"
+                      }}
+                    >
+                      Delete
+                    </button>
+
+                  </td>
+
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );
